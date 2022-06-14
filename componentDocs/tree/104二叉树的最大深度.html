@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>104二叉树的最大深度 | 算法</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/sf/assets/css/0.styles.515e5434.css" as="style"><link rel="preload" href="/sf/assets/js/app.74fd6630.js" as="script"><link rel="preload" href="/sf/assets/js/2.f716a3df.js" as="script"><link rel="preload" href="/sf/assets/js/9.eaa43780.js" as="script"><link rel="prefetch" href="/sf/assets/js/10.8aad683a.js"><link rel="prefetch" href="/sf/assets/js/11.bf08e8a4.js"><link rel="prefetch" href="/sf/assets/js/12.244ce608.js"><link rel="prefetch" href="/sf/assets/js/13.3c0972d6.js"><link rel="prefetch" href="/sf/assets/js/14.f87b549c.js"><link rel="prefetch" href="/sf/assets/js/15.9eeab1f7.js"><link rel="prefetch" href="/sf/assets/js/16.bbd265ed.js"><link rel="prefetch" href="/sf/assets/js/17.10cab484.js"><link rel="prefetch" href="/sf/assets/js/18.30b5bf03.js"><link rel="prefetch" href="/sf/assets/js/19.bda35fb0.js"><link rel="prefetch" href="/sf/assets/js/20.b38dde3f.js"><link rel="prefetch" href="/sf/assets/js/21.0484ff10.js"><link rel="prefetch" href="/sf/assets/js/22.50b0b309.js"><link rel="prefetch" href="/sf/assets/js/23.820b7f51.js"><link rel="prefetch" href="/sf/assets/js/24.27294b65.js"><link rel="prefetch" href="/sf/assets/js/3.5de6c8cd.js"><link rel="prefetch" href="/sf/assets/js/4.7a20f468.js"><link rel="prefetch" href="/sf/assets/js/5.d6b6314a.js"><link rel="prefetch" href="/sf/assets/js/6.b7624161.js"><link rel="prefetch" href="/sf/assets/js/7.09afac73.js"><link rel="prefetch" href="/sf/assets/js/8.766b21b4.js">
+    <link rel="stylesheet" href="/sf/assets/css/0.styles.515e5434.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/sf/" class="home-link router-link-active"><!----> <span class="site-name">算法</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/sf/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://github.com/l1872427108/uui" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://www.npmjs.com/package/uu-uui" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Npm
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/sf/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="https://github.com/l1872427108/uui" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://www.npmjs.com/package/uu-uui" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Npm
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/sf/componentDocs/tree/树.html" class="sidebar-link">树</a></li><li><a href="/sf/componentDocs/tree/深度优先遍历.html" class="sidebar-link">深度优先遍历</a></li><li><a href="/sf/componentDocs/tree/广度优先遍历.html" class="sidebar-link">广度优先遍历</a></li><li><a href="/sf/componentDocs/tree/先序遍历.html" class="sidebar-link">先序遍历(根左右)</a></li><li><a href="/sf/componentDocs/tree/中序遍历.html" class="sidebar-link">中序遍历(左根右)</a></li><li><a href="/sf/componentDocs/tree/后序遍历.html" class="sidebar-link">中序遍历(左右根)</a></li><li><a href="/sf/componentDocs/tree/94二叉树的中序遍历.html" class="sidebar-link">94二叉树的中序遍历</a></li><li><a href="/sf/componentDocs/tree/102二叉树的层序遍历.html" class="sidebar-link">102二叉树的层序遍历</a></li><li><a href="/sf/componentDocs/tree/104二叉树的最大深度.html" class="active sidebar-link">104二叉树的最大深度</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/sf/componentDocs/tree/111二叉树最小深度.html" class="sidebar-link">111二叉树最小深度</a></li><li><a href="/sf/componentDocs/tree/遍历json的所有节点值.html" class="sidebar-link">遍历json的所有节点值</a></li><li><a href="/sf/componentDocs/tree/树组件.html" class="sidebar-link">树组件</a></li><li><a href="/sf/componentDocs/tu/图.html" class="sidebar-link">图</a></li><li><a href="/sf/componentDocs/tu/图的深度优先遍历.html" class="sidebar-link">图的深度优先遍历</a></li><li><a href="/sf/componentDocs/tu/图的广度优先遍历.html" class="sidebar-link">图的广度优先遍历</a></li><li><a href="/sf/componentDocs/tu/65有效数字.html" class="sidebar-link">有效数字</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_104二叉树的最大深度"><a href="#_104二叉树的最大深度" class="header-anchor">#</a> 104二叉树的最大深度</h1> <h3 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h3> <p>给定一个二叉树，找出其最大深度.</p> <p>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。</p> <h3 id="用例"><a href="#用例" class="header-anchor">#</a> 用例</h3> <p>[3, 9, 20, null, null, 15, 7];</p> <div class="language- extra-class"><pre><code>3
+</code></pre></div><p>/ <br>
+9  20
+/  <br>
+15   7</p> <p>返回最大深度3</p> <h3 id="解题思路"><a href="#解题思路" class="header-anchor">#</a> 解题思路</h3> <ul><li>求最大深度，考虑使用深度优先遍历</li> <li>遍历过程中，记录每个节点所在的层级，找出最大的层级。</li></ul> <h3 id="解题步骤"><a href="#解题步骤" class="header-anchor">#</a> 解题步骤</h3> <ul><li>新建一个变量，记录最大的深度。</li> <li>在遍历过程中，不断的刷新最大深度这个变量。</li> <li>返回变量。</li></ul> <h3 id="coding"><a href="#coding" class="header-anchor">#</a> coding</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">**</span>
+ <span class="token operator">*</span> @param <span class="token punctuation">{</span>TreeNode<span class="token punctuation">}</span> root
+ <span class="token operator">*</span> @<span class="token keyword">return</span> <span class="token punctuation">{</span>number<span class="token punctuation">}</span>
+ <span class="token operator">*</span><span class="token operator">/</span>
+<span class="token keyword">var</span> <span class="token function-variable function">maxDepth</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 记录最大深度</span>
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token comment">// 深度优先遍历</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">dfs</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">n<span class="token punctuation">,</span> l</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>n<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">// 记录每一个节点的层级</span>
+        <span class="token comment">// res = Math.max(res, l);</span>
+
+        <span class="token comment">// 优化，只需要对叶子节点来进行比较大值</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>n<span class="token punctuation">.</span>left <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>n<span class="token punctuation">.</span>right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            res <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> l<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>left<span class="token punctuation">,</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>right<span class="token punctuation">,</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 调用，并传入层级1</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token comment">// 调用，传入root</span>
+    <span class="token comment">// 返回最大深度遍历</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/sf/componentDocs/tree/102二叉树的层序遍历.html" class="prev">
+        102二叉树的层序遍历
+      </a></span> <span class="next"><a href="/sf/componentDocs/tree/111二叉树最小深度.html">
+        111二叉树最小深度
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/sf/assets/js/app.74fd6630.js" defer></script><script src="/sf/assets/js/2.f716a3df.js" defer></script><script src="/sf/assets/js/9.eaa43780.js" defer></script>
+  </body>
+</html>
